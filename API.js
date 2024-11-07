@@ -17,21 +17,23 @@ async function populateCountrySelect() {
     allNetworks = await fetchData(); 
     const countrySelect = document.getElementById('countrySelect');
 
+    countrySelect.innerHTML = '';
+
     const countries = [...new Set(allNetworks.map(network => network.location.country))];
 
     countries.forEach(country => {
         const option = document.createElement('option');
         option.value = country;
-        option.textContent = country;
-        countrySelect.appendChild(option);
+        option.textContent = country; 
+        countrySelect.appendChild(option); 
     });
 
-    displayNetworks(allNetworks);
+    displayNetworks(allNetworks); 
 }
 
 function displayNetworks(networks) {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '';
+    resultsDiv.innerHTML = ''; 
 
     if (networks.length > 0) {
         networks.forEach(network => {
