@@ -2,7 +2,7 @@ let allNetworks = [];
 
 async function fetchData() {
     try {
-        const response = await fetch('http://api.citybik.es/v2/networks');
+        const response = await fetch('https://api.citybik.es/v2/networks');
         if (!response.ok) {
             throw new Error("Could not fetch resource");
         }
